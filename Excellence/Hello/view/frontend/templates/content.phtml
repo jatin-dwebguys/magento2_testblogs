@@ -1,0 +1,114 @@
+<div data-bind="scope: 'koexample'">
+<!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+ 
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "koexample": {
+                            "component": "Excellence_Hello/js/knock",
+                            "config" : {
+                               "template" : "Excellence_Hello/example",
+                               "sample_data" : {
+                                   "test"  : 1,
+                                   "test" : 2
+                               } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+</script>
+
+<?php return; ?>
+
+<div data-rale="pannel" data-mage-init='{"loader": {}}'>
+     content
+</div>
+
+
+<script type="text/javascript">
+	require(['jquery'],function($){
+		setTimeout(function(){
+			$('[data-rale="pannel"]').trigger('show.loader');
+			alert(1);
+		},1000);
+		
+	});
+</script>
+
+<?php return; ?>
+
+<!-- data-mage-init='{"validation": {}}' -->
+<form class="form" id="custom-form" method="post" autocomplete="off">
+   <fieldset class="fieldset">
+       <legend class="legend"><span><?php echo __('Personal Information') ?></span></legend><br>
+        <div class="field required">
+            <label for="email_address" class="label"><span><?php echo __('Email') ?></span></label>
+            <div class="control">
+                <input type="email" name="email" id="email_address" value="" title="<?php echo __('Email') ?>" class="input-text" data-validate="{required:true, 'validate-email':true}">
+            </div>
+        </div>
+   </fieldset>
+   <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php  echo __('Submit') ?>"><span><?php echo __('Submit') ?></span></button>
+        </div>
+    </div>
+</form>
+
+<!-- <script type="text/x-magento-init">
+    {
+        "#custom-form": {
+            "validation": {}
+        }
+    }
+</script> -->
+<script type="text/javascript">
+	
+require('jquery','jquery/jquery-storageapi',function($){
+	$.cookieStorage.isSet('')
+	$.cookieStorage.set('')
+})
+
+</script>
+<script type="text/javascript">
+	require(['mage/url'],function(urlBuilder){
+		alert(urlBuilder.build('hello/*/index'));
+	});
+</script>
+
+<script type="text/javascript">
+	require(['jquery','mage/translate'],function($){
+		$.mage.__('Text To Translate');
+	});
+</script>
+
+<script type="text/javascript">
+require([
+    'jquery',
+    'mage/template',
+], function($,mageTemplate){
+
+   var template = 
+   				'<div class="<%- data.row_class %>">' +
+                    '<span class="qs-option-name">' +
+                       ' <%- data.title %>' +
+                    '</span>' +
+                '</li>';
+    var dynamic = mageTemplate(template);
+    var data = {
+          row_class : 'test_class',
+          title : 'Test Title'
+    };
+    var html = dynamic({
+                            data: data
+                        });	
+    //alert(html);
+
+});
+</script>
+
