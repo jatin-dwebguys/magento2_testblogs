@@ -1,1 +1,15 @@
-asdfasdf
+<li id="custom1" class="checkout-shipping-address">
+    <div class="step-title" data-bind="i18n: 'Custom Step'" data-role="title"></div>
+    <div id="checkout-step-custom1"
+         class="step-content"
+         data-role="content">
+
+
+        <!-- ko foreach: getRegion('custom-fields') -->
+		    <!-- ko template: getTemplate() --><!-- /ko -->
+		<!--/ko-->
+        
+
+ 
+    </div>
+</li>

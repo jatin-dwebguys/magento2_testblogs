@@ -12,5 +12,23 @@
                 <scope>1</scope> <!-- field id -->
             </active_display>
         </helloworld>
+        <sales>
+            <totals_sort>
+                <etech>10</etech>
+            </totals_sort>
+        </sales>
+        <carriers>
+            <shippingmethod>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Excellence\Hello\Model\Carrier\Method</model>
+                <name>Custom Shipping</name>
+                <price>5.00</price>
+                <title>Custom Shipping</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+                <handling_type>F</handling_type>
+            </shippingmethod>
+        </carriers>
     </default>
 </config>

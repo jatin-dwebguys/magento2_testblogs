@@ -1,18 +1,68 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">        
+    <referenceContainer name="content">
+                    <block class="Magento\Framework\View\Element\Template" name="sample123" template="Excellence_Hello::onepage.phtml" />
+    </referenceContainer>
     <referenceBlock name="checkout.root">
     	<arguments>
     			<argument name="jsLayout" xsi:type="array">
     				<item name="components" xsi:type="array">
                             <item name="checkout" xsi:type="array">
                             	<item name="children" xsi:type="array">
+
+                                    <item name="sidebar" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="summary" xsi:type="array">
+                                                 <item name="children" xsi:type="array">
+                                                    <item name="totals" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="etech" xsi:type="array">
+                                                                <item name="component"  xsi:type="string">Excellence_Hello/js/view/summary/etech</item>
+                                                                <item name="config" xsi:type="array">
+                                                                    <item name="title" xsi:type="string" translate="true">Etech</item>
+                                                                    <item name="template" xsi:type="string">Excellence_Hello/cart/totals/etech</item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+
                             		<item name="steps" xsi:type="array">
                             			<item name="children" xsi:type="array">
                             				<item name="etechtestdf" xsi:type="array">
                             					<item name="sortOrder" xsi:type="string">-1</item>
-                                                <item name="component" xsi:type="string">Excellence_Hello/js/knock</item>
+                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                <!-- <item name="displayArea" xsi:type="string">etechtestdf</item> -->
                                                 <item name="config" xsi:type="array">
                                                     <item name="template" xsi:type="string">Excellence_Hello/example</item>
+                                                </item>
+                                                <item name="children" xsi:type="array">
+                                                    <item name="custom-fields" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="etechtest3333" xsi:type="array">
+                                                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                <item name="dataScope" xsi:type="string">excellence.etechtest3333</item>
+                                                                <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                <item name="customEntry" xsi:type="string"></item>
+                                                                <item name="validation" xsi:type="array">
+                                                                    <item name="required-entry" xsi:type="boolean">true</item>
+                                                                </item>
+                                                                <item name="config" xsi:type="array">
+                                                                    <item name="label" xsi:type="string">Xys</item>
+                                                                    
+                                                                    <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                    <item name="template" xsi:type="string">ui/form/field</item>
+                                                                    <item name="customScope" xsi:type="string">excellence</item>
+                                                                    <item name="tooltip" xsi:type="array">
+                                                                        <item name="description" xsi:type="string" translate="true">Etech field.</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
                                                 </item>
                                             </item>
                                             <item name="billing-step" xsi:type="array">
@@ -40,7 +90,7 @@
                                                                             </item>
                                                                         </item>
                                                                     </item>
-                                                            </item>
+                                                                </item>
                                                             </item>
                                                         </item>
                                                     </item>
@@ -50,6 +100,17 @@
                                                 <item name="children" xsi:type="array">
                                                     <item name="shippingAddress" xsi:type="array">
                                                         <item name="children" xsi:type="array">
+                                                            
+                                                            <item name="before-shipping-method-form" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="custom_shiping_fields" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Excellence_Hello/js/test</item>
+                                                                        <item name="config" xsi:type="array"> 
+                                                                            <item name="template" xsi:type="string">Excellence_Hello/test</item> 
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
                                                             <item name="shipping-address-fieldset" xsi:type="array">
                                                                 <item name="children" xsi:type="array">
                                                                     <item name="etechtest1111" xsi:type="array">

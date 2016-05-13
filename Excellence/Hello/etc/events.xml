@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd"> 
+	<event name="sales_convert_quote_to_order"> 
+		<observer name="excellence_hello_sales_convert_quote_to_order" instance="Excellence\Hello\Observer\ToOrder" /> 
+	</event> 
+</config>

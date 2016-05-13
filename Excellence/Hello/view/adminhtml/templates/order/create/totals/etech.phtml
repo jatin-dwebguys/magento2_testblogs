@@ -1,0 +1,24 @@
+<tr class="<?php /* @escapeNotVerified */ echo $block->getTotal()->getCode(); ?> row-totals">
+    <td style="<?php /* @escapeNotVerified */ echo $block->getTotal()->getStyle() ?>" class="admin__total-mark" colspan="<?php /* @escapeNotVerified */ echo $block->getColspan(); ?>">
+        <?php if ($block->getRenderingArea() == $block->getTotal()->getArea()): ?><strong><?php endif; ?>
+            <?php echo $block->escapeHtml($block->getTotal()->getTitle()); ?>
+        <?php if ($block->getRenderingArea() == $block->getTotal()->getArea()): ?></strong><?php endif; ?>
+    </td>
+    <td style="<?php /* @escapeNotVerified */ echo $block->getTotal()->getStyle() ?>" class="admin__total-amount">
+        <?php if ($block->getRenderingArea() == $block->getTotal()->getArea()): ?><strong><?php endif; ?>
+            <input type="number" id="<?php echo $block->getTotal()->getCode(); ?>_id" class=" input-text admin__control-text" value="<?php echo $block->getTotal()->getValue() ?>" />
+        <?php if ($block->getRenderingArea() == $block->getTotal()->getArea()): ?></strong><?php endif; ?>
+    </td>
+</tr>
+
+<script>
+    require(["jquery","underscore","jquery/ui","Magento_Sales/order/create/form"], function($,_){
+        var ajax_debounce = _.debounce(function(){
+                var fee = $('#<?php echo $block->getTotal()->getCode(); ?>_id').val();
+               order.loadArea(['totals'],true,{'<?php echo $block->getTotal()->getCode(); ?>_fee' : fee});
+            },500);
+        $('#<?php echo $block->getTotal()->getCode(); ?>_id').keyup(function(){
+            ajax_debounce();
+        });
+    });
+</script>

@@ -13,5 +13,12 @@ var config = {
     		export : 'bxslider'
     	}
     },
-    deps: ['textpercentage']
+    deps: ['textpercentage'],
+    config : {
+        mixins: {
+            'Magento_Checkout/js/action/set-billing-address': {
+                'Excellence_Hello/js/action/set-billing-address-mixin': true
+            }
+        }
+    }
 };
